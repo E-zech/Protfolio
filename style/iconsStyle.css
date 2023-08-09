@@ -1,0 +1,67 @@
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  background-color: #ced3f300;
+}
+
+.icons > img {
+  color: rgb(0, 0, 0);
+}
+
+.i:hover {
+  opacity: 0.8;
+  scale: 1.1;
+  animation: wiggle 2s;
+}
+
+.fa-html:hover {
+  color: rgb(25, 5, 173);
+}
+
+.i {
+  padding: 20px;
+  font-size: 2em;
+  width: 90px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 34%;
+}
+
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .icons {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    background-color: #ffffff00;
+  }
+}

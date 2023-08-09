@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,700;1,300;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Averia Serif Libre", cursive;
+}
+
+body {
+  background-color: rgba(243, 242, 255, 0.9) !important;
+}
+
+.navbar {
+  background: rgb(190, 188, 249);
+  background: linear-gradient(
+    180deg,
+    rgba(190, 188, 249, 0.8660714285714286) 0%,
+    rgba(190, 188, 249, 0.8744747899159664) 74%,
+    rgba(237, 235, 255, 0.792) 100%
+  );
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.myName::before {
+  margin-left: 10px;
+  display: block;
+  color: #4d129f;
+}
+
+.myName:hover::after {
+  content: ". Eliya Zechariya";
+  font-size: 1rem;
+  color: #381b62;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.8s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  border-radius: 30%;
+  transition: all 0.8s ease-in-out;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 72vh;
+  background-image: url(../Images/3.jpg);
+  background-position: top;
+  transition: all 2s ease-in-out;
+}
+
+#container:hover {
+  background-position: center;
+  transition: all 2s ease-in-out;
+}
+
+.headLine {
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  color: #573378e6;
+  margin-bottom: 100px;
+}
+
+.wrapTxt {
+  margin-top: -50px;
+  transform: translateX(-230px);
+  opacity: 0;
+  transition: all 2s ease-in-out;
+}
+
+#container:hover .wrapTxt {
+  transform: translateX(1px);
+  opacity: 1;
+  transition: all 2s ease-in-out;
+}
+
+.txt {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.wrapBtns {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  width: 100%;
+  gap: 40px;
+}
+
+.project-btn {
+  border: none;
+  font-weight: bold;
+  border-radius: 14px;
+  padding: 7px;
+  color: #381b62;
+  background-color: #c1d5ff;
+}
+
+.project-btn:hover {
+  color: #771df5;
+  background-color: #c1d5ffe7;
+  scale: 1.08;
+}
+
+.hr {
+  margin: 0 auto;
+  width: 98vw;
+  border-radius: 50%;
+  border: 4px double #b100ff;
+}
+
+#imgDiv,
+#imgDiv > a > div {
+  display: flex;
+  width: 97.5vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#imgDiv {
+  padding: 13vh 0;
+  margin-left: 0.5vw;
+}
+
+.active {
+  width: 80%;
+  box-shadow: 2px 2px 20px rgba(165, 108, 239, 0.822);
+}
+
+@media screen and (max-width: 850px) {
+  .txt {
+    text-align: center;
+    padding: 10px;
+  }
+
+  #imgDiv {
+    padding: 9vh 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #imgDiv {
+    width: 95.5vw;
+    padding: 7vh 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .headLine {
+    font-size: 2.5rem;
+  }
+
+  .project-btn {
+    padding: 4px;
+  }
+
+  #imgDiv {
+    padding: 4vh 3vw;
+  }
+}

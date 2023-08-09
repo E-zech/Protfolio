@@ -1,0 +1,151 @@
+.form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #7f279c 0%, #2e279d 100%);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form > h1 {
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+label {
+  cursor: text;
+  font-size: 1.8rem;
+}
+
+input {
+  background-color: rgba(255, 254, 254, 0);
+  font-size: 1.6em;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  color: white;
+}
+
+textarea {
+  width: 500px;
+  height: 180px;
+  border-left: none;
+  background-color: transparent;
+  border-right: none;
+  border-top: none;
+  resize: none !important;
+  color: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:hover,
+textarea:hover {
+  scale: 1.02;
+  cursor: pointer;
+}
+
+.btnUniqe {
+  background-color: #430663;
+  border: none;
+  color: floralwhite;
+  align-self: flex-end;
+}
+
+.btnUniqe:hover {
+  background-color: #420663b4;
+  color: wheat;
+}
+
+#snackbar {
+  width: auto;
+  position: relative;
+  visibility: hidden;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 1;
+  left: 15vw;
+  bottom: 50px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  textarea {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #snackbar {
+    left: 10vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #snackbar {
+    bottom: 0;
+    left: 0;
+  }
+}
