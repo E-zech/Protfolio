@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { useNavigate } from 'react-router-dom';
 import { Link } from "react-scroll";
 
 export default function Navbar() {
     // State to manage the navbar's visibility
     const [nav, setNav] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const navigate = useNavigate('')
 
     // Toggle function to handle the navbar's display
     const handleNav = () => {
@@ -40,14 +38,15 @@ export default function Navbar() {
         };
     }, []);
 
-
     return (
-        <div className={`flex justify-between items-center h-18 max-w-[1600px] mx-auto px-4 text-white fixed top-0 left-0 right-0 z-50 ${scrollPosition < 568 ? 'bg-transparent' : 'bg-[#d8d1f7]'}`}>
+        <div className={`flex justify-between items-center max-w-[1600px] mx-auto px-4 fixed top-0 left-0 right-0 z-50 ${scrollPosition < 568 ? 'bg-transparent' : 'bg-[#282828]'}`} style={{ minHeight: '70px' }}>
             {/* Logo */}
-            <h1 className='w-full text-3xl font-bold text-black'>EZ</h1>
+            <h1 className='w-16 text-3xl font-bold text-mainColor'
+                style={{ color: scrollPosition < 568 ? 'black' : 'cornsilk' }}
+            >EZ</h1>
 
             {/* Desktop Navigation */}
-            <ul className='hidden md:flex'>
+            <ul className='hidden md:flex flex-1 justify-evenly'>
                 {navItems.map(item => (
                     <Link key={item.id}
                         to={item.text}
@@ -56,13 +55,11 @@ export default function Navbar() {
                         duration={500}
                     >
                         <li
-
-                            className={`p-4 hover: rounded-xl m-2 cursor-pointer duration-300 text-black text-lg  ${scrollPosition < 568 ? 'hover:bg-white' : 'hover:bg-white'}`}
+                            className={`p-4 hover:scale-120 rounded-xl m-2 cursor-pointer duration-300 text-lg ${scrollPosition < 568 ? 'text-black' : 'text-mainColor'}`}
                         >
                             {item.text}
                         </li>
                     </Link>
-
                 ))}
             </ul>
 
@@ -75,21 +72,28 @@ export default function Navbar() {
             <ul
                 className={
                     nav
-                        ? 'fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
+                        ? 'fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#282828] ease-in-out duration-500'
                         : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
                 }
             >
                 {/* Mobile Logo */}
-                <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>REACT.</h1>
+                <h1 className='w-full text-3xl font-bold text-mainColor m-4'>EZ</h1>
 
                 {/* Mobile Navigation Items */}
                 {navItems.map(item => (
-                    <li
-                        key={item.id}
-                        className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
+                    <Link key={item.id}
+                        to={item.text}
+                        smooth={true}
+                        offset={-10}
+                        duration={500}
+                        onClick={handleNav} // Close the menu when an item is clicked
                     >
-                        {item.text}
-                    </li>
+                        <li
+                            className='p-4 border-b border-gray-600 rounded-xl m-2 cursor-pointer duration-300 text-mainColor hover:bg-mainColor hover:text-black'
+                        >
+                            {item.text}
+                        </li>
+                    </Link>
                 ))}
             </ul>
         </div>

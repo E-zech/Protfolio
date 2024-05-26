@@ -32,13 +32,11 @@ export default function Skills() {
     const currentSkill = skillsToggle[currentSkillIndex];
 
     return (
-        <section id="Skills" className="w-[90vw] max-w-[1600px] pt-16 flex flex-col justify-center items-center mx-auto p-4">
+        <section id="Skills" className="w-[70vw] max-w-[1600px] pt-16 flex flex-col justify-center items-center mx-auto p-4 text-mainColor">
             <h1 className="text-3xl">Skills</h1>
-            <br />
             <div>
-                The Technologies I use:
-                <div className={`mt-4 flex items-center space-x-2 skill-display ${animationClass}`}>
-                    <span className="text-xl">{currentSkill.name}</span>
+                <div className={`mt-4 flex items-center space-x-2 skill-display${animationClass}`}>
+                    <span className="text-xl text-center">{currentSkill.name}</span>
                     <FontAwesomeIcon icon={currentSkill.icon} size="2x" />
                 </div>
             </div>

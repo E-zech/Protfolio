@@ -1,3 +1,5 @@
+import { mainColor } from './src/util';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -5,7 +7,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        mainColor: 'cornsilk',
+        mainBgc: '#rgb(74 80 87)',
+      }
+    },
   },
   plugins: [],
 }

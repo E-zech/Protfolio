@@ -5,20 +5,20 @@
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
+  background-color: #fff8dccb;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #abcfcb;
+  background-color: #fff8dccb;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #abcfcb;
+  background-color: #fff8dccb;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #8ec0b9;
+  background-color: #fff8dc;
 }
 ::-webkit-scrollbar-corner {
   display: none;
