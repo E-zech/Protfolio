@@ -14,9 +14,14 @@ export const GeneralContext = createContext();
 
 export default function App() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   return (
 
-    <GeneralContext.Provider value={{ navigate }}>
+    <GeneralContext.Provider value={{ navigate, formData, setFormData }}>
       <Navbar />
       <Slider />
       <About />

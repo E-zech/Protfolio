@@ -52,7 +52,7 @@ export default function Navbar() {
                         to={item.text}
                         smooth={true}
                         offset={-10}
-                        duration={500}
+                        duration={300}
                     >
                         <li
                             className={`p-4 hover:scale-120 rounded-xl m-2 cursor-pointer duration-300 text-lg ${scrollPosition < 568 ? 'text-black' : 'text-mainColor'}`}

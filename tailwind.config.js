@@ -11,6 +11,7 @@ export default {
       colors: {
         mainColor: 'cornsilk',
         mainBgc: '#rgb(74 80 87)',
+        mainBgcInput: '#2e3236',
       }
     },
   },
