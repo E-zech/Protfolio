@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link } from "react-scroll";
+import '../../ScrollBar.css';
 
 export default function Navbar() {
     // State to manage the navbar's visibility
@@ -27,7 +28,6 @@ export default function Navbar() {
             if (currentPosition < 568) {
                 setScrollPosition(currentPosition);
             } else {
-                // If the user scrolls beyond 568px, set the background to black
                 setScrollPosition(568);
             }
         };
