@@ -1,14 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import './Skills.css';
+import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3Alt, faJs, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import './SkillsKeyFrames.css'
 
 export default function Skills() {
-    const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
-    const [animationClass, setAnimationClass] = useState('slide-in');
+    const [clicked, setClicked] = useState(false);
+    const skillsRef = useRef(null);
 
-    const skillsToggle = [
+
+    useEffect(() => {
+        if (clicked && skillsRef.current) {
+            const { offsetTop } = skillsRef.current;
+            window.scrollTo({
+                top: offsetTop - 70, // Adjust the offset here
+                behavior: 'smooth'
+            });
+        }
+    }, [clicked]);
+
+    const handleClick = () => {
+        setClicked(prevClicked => !prevClicked);
+    };
+
+    const skills = [
         { name: 'Html', icon: faHtml5 },
         { name: 'CSS', icon: faCss3Alt },
         { name: 'JavaScript', icon: faJs },
@@ -17,30 +32,34 @@ export default function Skills() {
         { name: 'MongoDB', icon: faDatabase },
     ];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setAnimationClass('slide-out');
-            setTimeout(() => {
-                setCurrentSkillIndex((prevIndex) => (prevIndex + 1) % skillsToggle.length);
-                setAnimationClass('slide-in');
-            }, 500);
-        }, 2000);
-
-        return () => clearInterval(interval);
-    }, [skillsToggle.length]);
-
-    const currentSkill = skillsToggle[currentSkillIndex];
-
     return (
-        <section id="Skills" className="w-[70vw] max-w-[1600px] pt-16 flex flex-col justify-center items-center mx-auto p-4 text-mainColor">
-            <h1 className="text-3xl">Skills</h1>
-            <div>
-                <div className={`mt-4 flex items-center space-x-2 skill-display${animationClass}`}>
-                    <span className="text-xl text-center">{currentSkill.name}</span>
-                    <FontAwesomeIcon icon={currentSkill.icon} size="2x" />
+        <>
+            <section
+                id="Skills"
+                className={`skills-section ${clicked ? 'clicked' : ''}`}
+                onClick={handleClick}
+                ref={skillsRef}
+            >
+                <h1>Skills</h1>
+                <div className="skills-container">
+                    {skills.map((skill, index) => (
+                        <div key={index} className="skill-display">
+                            <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
+                        </div>
+                    ))}
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {clicked &&
+                <>
+                    {/* <section>
+                        <h1> ?? </h1>
+                    </section> */}
+                </>
+
+            }
+
+        </>
+
     );
 }
-

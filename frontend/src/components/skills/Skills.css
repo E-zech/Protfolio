@@ -1,0 +1,107 @@
+.skills-section {
+  width: 200px; 
+  height: 200px; 
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0px; 
+  right: 0px; 
+  color: cornsilk;
+  border-radius: 50%; 
+  z-index: 1000; 
+  transition: all 0.3s ease; 
+}
+
+.skills-section:hover {
+  cursor: pointer;
+  transform: scale(1.1); 
+}
+
+.skills-section h1 {
+  font-size: 1.1rem; 
+  color: cornsilk;
+  position: absolute; 
+  z-index: 1; 
+  transition: font-size 0.3s ease; 
+}
+
+
+.skills-container {
+  position: relative;
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 20s linear infinite; 
+}
+
+.skill-display {
+  position: absolute;
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; 
+}
+
+
+.skill-icon {
+  font-size: 1.4rem; /* Adjust icon size */
+  transition: font-size 0.3s ease; /* Smooth transition for icon size change */
+}
+
+.skills-section:hover .skill-icon {
+  font-size: 1.5rem; /* Increase icon size on hover */
+}
+
+/* Position each icon around the circle */
+.skill-display:nth-child(1) { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+.skill-display:nth-child(2) { transform: rotate(60deg) translateX(50px) rotate(-60deg); }
+.skill-display:nth-child(3) { transform: rotate(120deg) translateX(50px) rotate(-120deg); }
+.skill-display:nth-child(4) { transform: rotate(180deg) translateX(50px) rotate(-180deg); }
+.skill-display:nth-child(5) { transform: rotate(240deg) translateX(50px) rotate(-240deg); }
+.skill-display:nth-child(6) { transform: rotate(300deg) translateX(50px) rotate(-300deg); }
+
+/* Keyframes for rotation animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles for the clicked state */
+.skills-section.clicked {
+  position: static; 
+  margin: 0 auto;
+  min-width: 400px; /* Adjust size as needed */
+  min-height: 400px; /* Adjust size as needed */
+  padding: 50px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust border-radius if needed */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.skills-section.clicked h1 {
+  font-size: 2rem; /* Adjust size of central text */
+}
+
+.skills-section.clicked .skill-icon {
+  font-size: 2.5rem; /* Adjust icon size */
+}
+
+/* Increase the radius for icons when clicked */
+.skills-section.clicked .skill-display:nth-child(1) { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+.skills-section.clicked .skill-display:nth-child(2) { transform: rotate(60deg) translateX(120px) rotate(-60deg); }
+.skills-section.clicked .skill-display:nth-child(3) { transform: rotate(120deg) translateX(120px) rotate(-120deg); }
+.skills-section.clicked .skill-display:nth-child(4) { transform: rotate(180deg) translateX(120px) rotate(-180deg); }
+.skills-section.clicked .skill-display:nth-child(5) { transform: rotate(240deg) translateX(120px) rotate(-240deg); }
+.skills-section.clicked .skill-display:nth-child(6) { transform: rotate(300deg) translateX(120px) rotate(-300deg); }

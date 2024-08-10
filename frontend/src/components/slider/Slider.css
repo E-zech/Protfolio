@@ -1,0 +1,32 @@
+/* Slider.css */
+
+.slider-header {
+    width: 100%;
+    max-width: 1600px;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 4rem; /* 16 */
+    margin: 0 auto;
+    padding: 1rem; /* 4 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .slider-section {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: cornsilk; /* Use the actual color value */
+    font-size: 3rem; /* 5xl */
+  }
+  
+  .slider-text-lg {
+    padding-top: 1rem; /* 4 */
+    font-size: 1.125rem; /* lg */
+  }
+  

@@ -1,0 +1,134 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    min-height: 70px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-transparent {
+    background-color: transparent;
+  }
+  
+  .navbar-dark {
+    background-color: #282828;
+  }
+  
+  .logo {
+    width: 4rem;
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: black; /* Default color */
+    transition: color 0.3s ease;
+  }
+  
+  .logo-dark {
+    color: cornsilk;
+  }
+  
+  .nav-items {
+    display: none; /* Hide by default */
+  }
+  
+  .nav-items-desktop {
+    display: flex; /* Show on larger screens */
+    flex: 1;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  
+  .nav-item {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    
+  }
+  
+  .nav-item:hover {
+    transform: scale(1.2);
+  }
+  
+  .nav-item-dark {
+    color: #282828;
+  }
+  
+  .nav-item-light {
+    color: black;
+  }
+  
+  .navbar-mobile-icon {
+    display: block;
+  }
+  
+  .navbar-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide off-screen by default */
+    width: 60%;
+    height: 100%;
+    border-right: 1px solid #1a1a1a;
+    background-color: #282828;
+    transition: left 0.5s ease;
+  }
+  
+  .navbar-mobile-menu-show {
+    left: 0; /* Show when menu is active */
+  }
+  
+  .mobile-logo {
+    width: 100%;
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 1rem;
+    color: cornsilk;
+  }
+  
+  .mobile-nav-item {
+    padding: 1rem;
+    border-bottom: 1px solid #4a4a4a;
+    border-radius: 0.75rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: cornsilk;
+  }
+  
+  .mobile-nav-item:hover {
+    background-color: cornsilk;
+    color: black;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) {
+    .nav-items {
+      display: flex; /* Show desktop navigation on larger screens */
+    }
+  
+    .navbar-mobile-icon {
+      display: none; /* Hide mobile menu icon on larger screens */
+    }
+  
+    .navbar-mobile-menu {
+      display: none; /* Hide mobile menu on larger screens */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .nav-items-desktop {
+      display: none; /* Hide desktop navigation on smaller screens */
+    }
+  }
+  
